@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import AccordionCard from '@/components/AccordionCard.vue'
+</script>
+
 <template>
-  <h1>Lorem ipsum dolor</h1>
+  <AccordionCard />
 </template>

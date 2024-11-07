@@ -17,5 +17,14 @@ body {
 }
 
 #app {
+  position: relative;
+  flex-grow: 1;
   padding: 2rem 1.5rem;
+  justify-content: center;
+  background: url('./images/background-pattern-mobile.svg') no-repeat top;
+  background-size: contain;
+
+  @media (min-width: 52rem) {
+    background-image: url('./images/background-pattern-desktop.svg');
+  }
 }
