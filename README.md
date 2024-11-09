@@ -70,24 +70,25 @@ describe('AccordionCard', () => {
 ```html
 <p :class="['accordion-item__content', { show: activeItemIndex === item.id }]">
   <span>{{ item.content }}</span>
+  <!-- The span is needed here for the grid trick to work (content inside the span is hidden or shown depending on the grid row size) -->
 </p>
 ```
 
 ```css
 .accordion-item__content {
   display: grid;
-  grid-template-rows: 0fr;
-  transition: 250ms ease-in-out;
+  grid-template-rows: 0fr; /* Start with the grid row size at 0fr (hidden content) */
+  transition: 250ms ease-in-out; /* Smooth transition for both grid-template-rows and padding properties */
 
   & > span {
     font-size: var(--fs-item-content);
     display: block;
-    overflow: hidden;
+    overflow: hidden; /* Content is hidden when grid row size is 0fr */
   }
 
   &.show {
-    padding-top: 1.5rem;
-    grid-template-rows: 1fr;
+    padding-top: 1.5rem; /* Add padding to the top when the item is shown */
+    grid-template-rows: 1fr; /* Expand the grid row to reveal content */
   }
 }
 ```
