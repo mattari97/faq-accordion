@@ -86,6 +86,10 @@ const setActiveIndex = (index: number) => {
     align-items: center;
     gap: 1.5rem;
 
+    &:hover .accordion-item__title {
+      color: hsl(var(--clr-primary));
+    }
+
     &:focus-visible {
       outline: 2px dotted hsl(var(--clr-primary));
       outline-offset: 2px;
@@ -98,6 +102,7 @@ const setActiveIndex = (index: number) => {
     font-weight: var(--fw-medium);
     line-height: var(--lh-title);
     color: hsl(var(--clr-text-200));
+    transition: color 200ms ease-out;
   }
 
   &__icon-plus,

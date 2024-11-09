@@ -1,39 +1,80 @@
-# faq-accordion
+# Frontend Mentor - GitHub user search app solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Contribution](#contribution)
 
-## Type Support for `.vue` Imports in TS
+## Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### The challenge
 
-## Customize configuration
+Users should be able to:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Hide/Show the answer to a question when the question is clicked
+- Navigate the questions and hide/show answers using keyboard navigation alone
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-## Project Setup
+### Screenshot
 
-```sh
-pnpm install
+![GitHub FAQ Accordion | Desktop version](./screenshots/desktop.png)
+
+![GitHub FAQ Accordion | Mobile version](./screenshots/mobile.png)
+
+### Links
+
+- Solution URL: [Go to solution](https://www.frontendmentor.io/solutions/github-user-search-app-vue3---typescript---scss-63J0Il57ZL)
+- Live Site URL: [Go to live site](https://github-user-search-app-acdev.vercel.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS / SCSS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Vue3](https://vuejs.org/) - The Progressive JavaScript Framework
+- [Typescript](https://www.typescriptlang.org/) - Strongly typed JS
+- [Vitest](https://vitest.dev/) - Next Generation Testing Framework
+
+### What I learned
+
+#### Vitest - @vue/test-utils
+
+```ts
+describe('AccordionCard', () => {
+  it('renders the component properly', () => {
+    const wrapper = mount(AccordionCard);
+    const title = wrapper.find('.accordion-header__title');
+    const items = wrapper.findAll('.accordion-item');
+    expect(title.text()).toBe('FAQs');
+    expect(items).toHaveLength(accordionItems.length);
+  });
+});
 ```
 
-### Compile and Hot-Reload for Development
+## Author
 
-```sh
-pnpm dev
-```
+- Frontend Mentor - [@AntoineC-dev](https://www.frontendmentor.io/profile/AntoineC-dev)
 
-### Type-Check, Compile and Minify for Production
+## Contribution
 
-```sh
-pnpm build
-```
+You can use this project for whatever you want. Don't forget to leave a ⭐.
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+- Fork the project to add it to your githug repositories.
+- Clone it on your local machine from you repositories.
+- cd into the project in your terminal
+- Install all the dependencies by running `npm install` or `yarn install` or `pnpm install`.
+- Open the project in your editor and start coding by running `npm run dev` or `yarn dev` or `pnpm dev`.
