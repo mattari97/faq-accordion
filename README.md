@@ -65,6 +65,33 @@ describe('AccordionCard', () => {
 });
 ```
 
+#### Transitions on height using CSS grid
+
+```html
+<p :class="['accordion-item__content', { show: activeItemIndex === item.id }]">
+  <span>{{ item.content }}</span>
+</p>
+```
+
+```css
+.accordion-item__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 250ms ease-in-out;
+
+  & > span {
+    font-size: var(--fs-item-content);
+    display: block;
+    overflow: hidden;
+  }
+
+  &.show {
+    padding-top: 1.5rem;
+    grid-template-rows: 1fr;
+  }
+}
+```
+
 ## Author
 
 - Frontend Mentor - [@AntoineC-dev](https://www.frontendmentor.io/profile/AntoineC-dev)
